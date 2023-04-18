@@ -8,8 +8,8 @@ class Circle {
         this.colour = colour;
     }
 
-    render(){
-        return `<circle cx="50%" cy="50%" r="100" height="100%" width="100%" fill="${this.color}">`;
+    rendering(){
+        return `<circle cx="50%" cy="50%" r="100" height="100%" width="100%" fill="${this.colour}"/>`;
     }
 
 }
@@ -24,7 +24,7 @@ class Rectangle {
         this.colour = colour;
     }
 
-    render(){
+    rendering(){
         return `<rect x="10" y="10" width="30" height="30" stroke="black" fill="${this.colour}" stroke-width="5"/>`;
     }
 
@@ -40,8 +40,8 @@ class Triangle {
         this.colour = colour;
     }
 
-    render(){
-        return `<polygon points="0,200 300,200 150,0" fill="${this.colour}">`;
+    rendering(){
+        return `<polygon points="0,200 300,200 150,0" fill="${this.colour}"/>`;
     }
 
 }
@@ -54,7 +54,7 @@ class SVG {
     }
 
     makeShape(shape){
-        this.s = shape;
+        this.s = shape.rendering();
     }
     setTextElement(text,color){
         this.text = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${color}">${text}</text>`
