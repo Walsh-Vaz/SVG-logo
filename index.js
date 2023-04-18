@@ -1,5 +1,5 @@
 const { async } = require("rxjs");
-const {Circle, Rectangle, Triangle} = require("./test/makeShapes");
+const {Circle, Rectangle, Triangle, SVG} = require("./test/makeShapes");
 const inquirer = require("inquirer");
 const fs = require("fs");
 
@@ -32,9 +32,9 @@ const questions = [
 
 async function init() {
     const response = await inquirer.prompt(questions);
-    let text; // stores the logo name when text meets the requirements
+    let text = ''; // stores the logo name when text meets the requirements
     let colourTxt = response.textColour;
-    let shape = response.shapes;
+    let shape = response["shapes"];
     let colour = response.shapeColour;
     var logoNameLength = response.logoName.length;
     
@@ -68,6 +68,17 @@ async function init() {
     }
     
     newShape.colourSetting(colour);
+
+    let image = new SVG();
+    let svg = "";
+    image.setTextElement(text, colourTxt);
+    image.makeShape(newShape);
+    svg = image.render();
+
+
+    fs.writeFile("logo.svg", svg, (err) => {
+        err ? console.log(err) : console.log("SVG generated")
+    })
 
 }
 
