@@ -56,8 +56,9 @@ class SVG {
     makeShape(shape){
         this.s = shape.rendering();
     }
-    setTextElement(text,color){
-        this.text = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${color}">${text}</text>`
+
+    setTextElement(text,colour){
+        this.text = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${colour}">${text}</text>`
     }
 
     render(){
