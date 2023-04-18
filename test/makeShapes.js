@@ -25,7 +25,7 @@ class Rectangle {
     }
 
     rendering(){
-        return `<rect x="10" y="10" width="30" height="30" stroke="black" fill="${this.colour}" stroke-width="5"/>`;
+        return `<rect x="50" y="50" width="300" height="300" stroke="black" fill="${this.colour}" stroke-width="5"/>`;
     }
 
 }
