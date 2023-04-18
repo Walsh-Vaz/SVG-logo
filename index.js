@@ -34,7 +34,7 @@ async function init() {
     const response = await inquirer.prompt(questions);
     let text = ''; // stores the logo name when text meets the requirements
     let colourTxt = response.textColour;
-    let shape = response["shapes"];
+    let shape = response.shapes;
     let colour = response.shapeColour;
     var logoNameLength = response.logoName.length;
     
@@ -47,9 +47,9 @@ async function init() {
     }
 
     //console.log("User text:"  + text);
-    console.log("User text:"  + colourTxt);
-    console.log("User text:"  + shape);
-    console.log("User text:"  + colour);
+    //console.log("User text:"  + colourTxt);
+    //console.log("User text:"  + shape);
+    //console.log("User text:"  + colour);
 
     let newShape;
     if (shape == "Triangle") {
